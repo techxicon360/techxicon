@@ -12,7 +12,7 @@ const Navbar = () => {
           {/* LOGO */}
           <a href="/" className="w-12">
             <img
-              src="..\public\logo.png"
+              src="/logo.png"
               alt="nav logo"
               className="object-cover object-center"
             />
