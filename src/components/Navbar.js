@@ -1,30 +1,36 @@
 'use client'
 import React, { useState } from "react";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="w-full h-screen ">
+    <div className="w-full h-screen">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 w-full h-20 grid place-items-center z-50 transition-all ">
+      <nav className="fixed top-0 left-0 w-full h-20 grid place-items-center z-50 transition-all">
         <div className="container mx-auto flex justify-between items-center h-full px-6">
           {/* LOGO */}
-          <a href="/" className="w-12">
-            <img
+          <Link href="/" className="w-12">
+            <Image
               src="/logo.png"
               alt="nav logo"
+              width={48}
+              height={48}
               className="object-cover object-center"
             />
-          </a>
+          </Link>
 
           {/* NAV LINKS */}
           <ul className="hidden lg:flex gap-16 text-white">
-            <li><a href="#" className="hover:text-[#ff7b02] transition-colors">Home</a></li>
-            <li><a href="#" className="hover:text-[#ff7b02] transition-colors">About</a></li>
-            <li><a href="#" className="hover:text-[#ff7b02] transition-colors">Services</a></li>
-            <li><a href="#" className="hover:text-[#ff7b02] transition-colors">Resources</a></li>
-            <li><a href="#" className="hover:text-[#ff7b02] transition-colors">Contact</a></li>
+            {["Home", "About", "Services", "Resources", "Contact"].map((item, i) => (
+              <li key={i}>
+                <Link href="#" className="hover:text-[#ff7b02] transition-colors">
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           {/* SOCIAL LINKS */}
@@ -68,9 +74,9 @@ const Navbar = () => {
               className={`h-20 bg-[#003347] hover:bg-[#003347]/80 shadow-[-3rem_3rem_3rem_rgba(0,0,0,0.7)] animate-navAnimation`}
               style={{ animationDelay: `${i * 200}ms` }}
             >
-              <a href="#" className="flex items-center h-full px-6">
+              <Link href="#" className="flex items-center h-full px-6">
                 {item}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
