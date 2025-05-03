@@ -12,7 +12,7 @@ const Navbar = () => {
           {/* LOGO */}
           <a href="/" className="w-12">
             <img
-              src="https://tailwindflex.com/images/logo.svg"
+              src="..\public\logo.png"
               alt="nav logo"
               className="object-cover object-center"
             />
