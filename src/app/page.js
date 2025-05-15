@@ -1,15 +1,37 @@
+'use client';
+import { useEffect, useState } from "react";
+import About from "@/components/About";
+import Client from "@/components/Client";
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
+import CustomServices from "@/components/Hero";
 import Main from "@/components/Main";
 import Navbar from "@/components/Navbar";
-import ParticlesComponent from "@/components/Particles";
-
+import Team from "@/components/Team";
+import Testimonial from "@/components/Testimonial";
+import Loader from "@/components/Loader"; // make sure this file exists
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setLoading(false), 2000); // loader duration
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (loading) return <Loader />;
+
   return (
-    <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-      <ParticlesComponent id="particles" />
-<Main/>
-<Navbar/>
-     
+    <div className="pt-20">
+      <Navbar />
+      <Main />
+      <About />
+      <CustomServices />
+      <Client />
+      <Testimonial />
+      <Team />
+      <Faq />
+      <Footer />
     </div>
   );
 }
