@@ -10,6 +10,8 @@ import Navbar from "@/components/Navbar";
 import Team from "@/components/Team";
 import Testimonial from "@/components/Testimonial";
 import Loader from "@/components/Loader"; // make sure this file exists
+import AppDevelopment from "@/components/AppDevelopment";
+import ContactForm from "@/components/Contact";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -31,6 +33,8 @@ export default function Home() {
       <Testimonial />
       <Team />
       <Faq />
+      <ContactForm/>
+
       <Footer />
     </div>
   );

@@ -13,9 +13,11 @@ const navLinks = [
 ];
 
 const serviceDropdown = [
-  { name: 'Web Design', href: '/services/web-design' },
-  { name: 'Development', href: '/services/development' },
-  { name: 'SEO Optimization', href: '/services/seo' }
+  { name: 'Visual Designing', href: '/visual-designing' },
+  { name: 'App Development', href: '/development' },
+   { name: 'Software Solutions', href: '/software-development' },
+   { name: 'E-commerce Solutions', href: '/ecommerce' },
+   { name: 'Digital Marketing', href: '/digital-marketing' },
 ];
 
 const socialLinks = ['instagram', 'facebook', 'linkedin'];
@@ -36,10 +38,10 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/logoo.png"
             alt="logo"
-            width={48}
-            height={48}
+            width={96}
+            height={96}
             className="object-cover"
           />
         </Link>

@@ -6,12 +6,12 @@ const reasons = [
   {
     title: 'Client Centric Approach',
     desc: "We focus on our clients' needs and work closely with them every step of the journey.",
-    icon: '/dig.png',
+    icon: '/log4.png',
   },
   {
     title: 'Ongoing Support',
     desc: 'We continue to help you even after the project is done, ensuring you keep succeeding.',
-    icon: '/dig.png',
+    icon: '/log5.png',
   },
   {
     title: 'Complete Services',
@@ -21,12 +21,12 @@ const reasons = [
   {
     title: 'Custom Solutions',
     desc: 'We know every business is different, so we create solutions that are specific just for you.',
-    icon: '/dig.png',
+    icon: '/log3.png',
   },
   {
     title: '100% Success',
     desc: 'Our past projects showcase our approach towards success.',
-    icon: '/dig.png',
+    icon: '/log2.png',
   },
 ];
 
