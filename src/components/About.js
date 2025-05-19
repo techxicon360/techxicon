@@ -1,8 +1,22 @@
 'use client';
+
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const logos = ['logo1', 'logo2', 'logo3', 'logo4', 'logo5', 'logo6', 'logo7', 'logo8', 'logo9', 'logo10', 'logo11'];
+const logos = [
+  'logo1',
+  'logo2',
+  'logo3',
+  'logo4',
+  'logo5',
+  'logo6',
+  'logo7',
+  'logo8',
+  'logo9',
+  'logo10',
+  'logo11',
+];
 
 export default function About() {
   return (
@@ -16,11 +30,15 @@ export default function About() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <img
-            src="/luy.png"
-            alt="About TechXicon360"
-            className="rounded-xl shadow-xl max-w-full h-auto"
-          />
+          <div className="relative w-full max-w-md h-64 md:h-96 rounded-xl shadow-xl overflow-hidden">
+            <Image
+              src="/luy.png"
+              alt="About TechXicon360"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Right Text */}
@@ -42,12 +60,16 @@ export default function About() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <div className="flex items-center gap-2 text-blue-700 px-4 py-2">
-              <img src="/1.png" alt="Strategy Icon" className="h-auto w-14" />
+              <div className="relative w-14 h-14">
+                <Image src="/1.png" alt="Strategy Icon" fill style={{ objectFit: 'contain' }} />
+              </div>
               <span className="font-medium">Industry-Specific Strategies for Success</span>
             </div>
 
             <div className="flex items-center gap-2 text-purple-700 px-4 py-2">
-              <img src="/circle.png" alt="Growth Icon" className="h-auto w-14" />
+              <div className="relative w-14 h-14">
+                <Image src="/circle.png" alt="Growth Icon" fill style={{ objectFit: 'contain' }} />
+              </div>
               <span className="font-medium">End-to-End Services for Your Growth</span>
             </div>
           </div>
@@ -57,14 +79,17 @@ export default function About() {
       {/* Logos Marquee */}
       <div className="mt-12 overflow-hidden py-6 relative">
         <div className="marquee">
-          <div className="marquee-content">
+          <div className="marquee-content flex items-center">
             {[...logos, ...logos].map((logo, index) => (
-              <img
-                key={`${logo}-${index}`}
-                src={`/${logo}.png`}
-                alt={`${logo} logo`}
-                className="mx-4 h-auto w-auto max-h-24"
-              />
+              <div key={`${logo}-${index}`} className="relative mx-4 w-24 h-24 flex-shrink-0">
+                <Image
+                  src={`/${logo}.png`}
+                  alt={`${logo} logo`}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  priority={index < logos.length} // priority for first loop
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -81,6 +106,7 @@ export default function About() {
         .marquee-content {
           display: flex;
           animation: scroll 30s linear infinite;
+          will-change: transform;
         }
 
         @keyframes scroll {
