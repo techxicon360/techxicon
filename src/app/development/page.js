@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Image from 'next/image';
 
 export default function Page() {
   const servicesLeft = [
@@ -75,46 +74,48 @@ export default function Page() {
   return (
     <div id="app" className="relative">
       <Navbar />
+      
+      {/* Hero Section */}
       <section className="flex items-center p-6 md:p-9 flex-col md:flex-row gap-5 md:gap-12 bg-white min-h-screen">
-      {/* Left side text and button with animation */}
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="space-y-4 w-full md:w-1/2"
-      >
-        <h1
-          className="text-[#442AC6] text-3xl md:text-4xl font-bold relative inline-block
-          after:block after:h-[2px] after:bg-gradient-to-r after:from-[#9854FF] after:to-[#442AC6]
-          after:w-[89%] after:mt-1"
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-4 w-full md:w-1/2"
         >
-          App Development
-        </h1>
-        <p className="text-[#494949] text-base leading-relaxed">
-          At Techxicon, we create high-performance, user-friendly, and
-          feature-packed mobile applications designed to enhance user engagement
-          and deliver seamless experiences across all devices. Whether you need
-          a native, hybrid, or cross-platform app, our team builds custom
-          solutions that align with your business goals.
-        </p>
-        <button className="bg-gradient-to-r from-[#9854FF] to-[#442AC6] text-white px-6 py-2 rounded-lg text-sm md:text-base">
-          Let’s Connect
-        </button>
-      </motion.div>
+          <h1
+            className="text-[#442AC6] text-3xl md:text-4xl font-bold relative inline-block
+            after:block after:h-[2px] after:bg-gradient-to-r after:from-[#9854FF] after:to-[#442AC6]
+            after:w-[89%] after:mt-1"
+          >
+            App Development
+          </h1>
+          <p className="text-[#494949] text-base leading-relaxed">
+            At Techxicon, we create high-performance, user-friendly, and
+            feature-packed mobile applications designed to enhance user engagement
+            and deliver seamless experiences across all devices. Whether you need
+            a native, hybrid, or cross-platform app, our team builds custom
+            solutions that align with your business goals.
+          </p>
+          <button className="bg-gradient-to-r from-[#9854FF] to-[#442AC6] text-white px-6 py-2 rounded-lg text-sm md:text-base">
+            Let’s Connect
+          </button>
+        </motion.div>
 
-      {/* Right side image */}
-      <div className="flex justify-center w-full md:w-1/2">
-        <img
-          src="/app.png"
-          alt="Illustration of mobile app development"
-          className="w-full max-w-[500px] h-auto object-cover rounded-xl"
-        />
-      </div>
-    </section>
-      {/* SERVICES DETAILS */}
-      <section className="bg-[#FCFAFF] rounded-3xl px-6 md:px-25 py-22 lg:max-w-screen">
+        <div className="flex justify-center w-full md:w-1/2">
+          <img
+            src="/app.png"
+            alt="Illustration of mobile app development"
+            className="w-full max-w-[500px] h-auto object-cover rounded-xl"
+          />
+        </div>
+      </section>
+
+      {/* Services Details Section */}
+      <section className="bg-[#FCFAFF] rounded-3xl px-6 md:px-25 py-22 lg:max-w-screen mx-auto mt-12">
         <div className="flex flex-col gap-9 md:flex-row md:gap-20">
           <div className="flex-1 space-y-6">
+            {/* Native App Deployment */}
             <div className="space-y-3">
               <h2 className="heading font-Comfortaa font-bold text-[#442AC6] text-[19px]">
                 1. Native App Deployment
@@ -133,6 +134,7 @@ export default function Page() {
               </p>
             </div>
 
+            {/* Other services from servicesLeft */}
             {servicesLeft.map((service, i) => (
               <div key={i} className="space-y-3">
                 <h2 className="heading font-Comfortaa font-bold text-[#442AC6] text-[19px]">{service.title}</h2>
@@ -143,8 +145,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* OUR WORKING PROCESS */}
-      <section className="space-y-8 mt-10">
+      {/* Working Process Section */}
+      <section className="space-y-8 mt-10 px-6 md:px-10">
         <h2 className="poppins-400 text-3xl ml-10 font-medium text-[#2B2933] font-poppins relative inline-block after:block after:h-[2px] after:bg-gradient-to-r after:from-[#9854FF] after:to-[#442AC6] after:w-[86%] after:mt-2">
           Our Working Process
         </h2>
@@ -187,6 +189,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );
